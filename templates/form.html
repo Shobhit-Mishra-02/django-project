@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Add student
+{% endblock title %}
+    
+
+{% block content %}
+    <div class="container">
+        <h1 class="text-center pt-5 pb-4">Add Student</h1>
+        <form class="pt-4">
+            
+        <div class="w-50 mx-auto">
+            <div class="mb-3">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" placeholder="first name">
+            </div>
+            <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" placeholder="last name">
+            </div>
+            <div class="mb-3">
+                <label for="age" class="form-label">Age</label>
+                <input type="text" class="form-control" id="age" placeholder="age">
+            </div>
+              
+            <div class="mb-3">
+                <label for="location" class="form-label">Enter location</label>
+                <textarea class="form-control" id="location" rows="3" placeholder="enter location"></textarea>
+            </div>
+
+            <div class="pt-3">
+                <button class="btn btn-primary px-3" type="submit">Add student</button>
+            </div>
+        </div>
+        </form>
+    </div>
+{% endblock content %}
+    
