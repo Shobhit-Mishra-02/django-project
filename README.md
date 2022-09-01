@@ -4,7 +4,7 @@
 - Students can register their firstName, lastName, age and location.
 - Register Students can view thier registration with their roll number.
 
-## How it works:
+## How to start app:
 1. Clone the repo.
 2. Open the settings.py file there you will see DATABASES dictionary which has a key 'name' which will be the name of the database when the app will try to connect your mongodb locally.
 3. Make sure you Mongodb server is running.
