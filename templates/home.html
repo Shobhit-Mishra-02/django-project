@@ -7,8 +7,9 @@ home page
 {% block content %} 
 <div class="container">
     <h2 class="text-center pt-5 pb-4">Enter your role number.</h2>
-    <form class="d-flex flex-row justify-content-center align-items-center">
-        <input class="form-control w-50 m-2" type="text" name="search" id="search">
+    <form method="get" action="/student" class="d-flex flex-row justify-content-center align-items-center">
+        {% csrf_token %}
+        <input class="form-control w-50 m-2" type="text" name="firstName" id="firstName" placeholder="enter first name..." required>
         <button class="btn btn-primary px-4" type="submit">Search</button>
     </form>
 

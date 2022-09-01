@@ -7,26 +7,27 @@
     
 
 {% block content %}
-<div class="container">
+<div class="container pb-5">
     <h1 class="text-center pt-5 pb-4">Student Details</h1>
     <form class="pt-4">
         
     <div class="w-50 mx-auto">
         <div class="mb-3">
             <label for="firstName" class="form-label">First Name</label>
-            <input type="text" class="form-control" id="firstName" value="Raman" readonly>
+            <input type="text" class="form-control" id="firstName" value={{ firstName }} readonly>
         </div>
         <div class="mb-3">
             <label for="lastName" class="form-label">Last Name</label>
-            <input type="text" class="form-control" id="lastName" value="Pathak" readonly>
+            <input type="text" class="form-control" id="lastName" value={{ lastName }} readonly>
         </div>
         <div class="mb-3">
             <label for="age" class="form-label">Age</label>
-            <input type="text" class="form-control" id="age" value="12" readonly>
+            <input type="text" class="form-control" id="age" value={{age}} readonly>
         </div>
         <div class="mb-3">
             <label for="location" class="form-label">Location</label>
-            <input type="text" class="form-control" id="location" value="new delhi, CP,..." readonly>
+            <textarea class="form-control" name="location" id="location" cols="30" rows="10" readonly>{{location}}</textarea>
+            <!-- <textarea rows="3" class="form-control" id="location" value={{ location }} readonly> -->
         </div>
         <div class="pt-3">
             <a href="/">go to home</a>
