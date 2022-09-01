@@ -1,24 +1,17 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
-from studentData.forms  import StudentDetailsForm
+from django.http import HttpResponse
 from studentData.models import Student
-import random
-# from pymongo import MongoClient
-# from django.conf import settings
 
-# client = MongoClient('localhost',27017)
-# db = client.studentDB
-# Create your views here.
-
-
-def index(request,):
+# This controller display the home page. 
+def index(request):
     return render(request,'home.html')
 
+# This controller display the student registration form.
 def addStudentFrom(request):
     return render(request,"form.html")
 
+# This controller creates a new student in the mongodb database.
 def createStudent(request):
-    print("creating student")
 
     if(request.method == 'POST'):
         firstName = request.POST["firstName"]
@@ -27,21 +20,20 @@ def createStudent(request):
         location = request.POST["location"]
         
         
-        Student(firstName=firstName, lastName=lastName, age=int(age), location=location).save()
-        return HttpResponseRedirect("/")
+        student = Student(firstName=firstName, lastName=lastName, age=int(age), location=location)
+        student.save()
+        return render(request,'formSubmitted.html',{"id":student.id})
         
     return HttpResponse("problem")
 
+# This controller display the student details, if the student is registered.
 def showStudent(request):
 
     try:    
-        firstName = request.GET['firstName']
-        student = Student.objects.filter(firstName=firstName).values()
-        # print(student[0])
+        id = request.GET['id']
+        student = Student.objects.filter(id=id).values()
+        print(student[0])
         return render(request,"student.html",student[0])
     except:
         return render(request,'error.html')
 
-
-def error(request):
-    return render(request,'error.html')

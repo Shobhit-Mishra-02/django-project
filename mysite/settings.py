@@ -82,10 +82,12 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #     }
 # }
 
+
+# Here I have used djongo to connect with the mongodb locally.
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'StudentDB',
+        'NAME': 'StudentDB', # Name of the database.
     }
 }
 
