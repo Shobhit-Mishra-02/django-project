@@ -32,7 +32,6 @@ def showStudent(request):
     try:    
         id = request.GET['id']
         student = Student.objects.filter(id=id).values()
-        print(student[0])
         return render(request,"student.html",student[0])
     except:
         return render(request,'error.html')
